@@ -1,6 +1,6 @@
 {
   "name": "geojson-elevation-manipulation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A package to manipulate 3d geojson, set baseElevation, amplify elevation etc",
   "main": "lib/index.js",
   "types": "lib/index.t.ts",
@@ -8,7 +8,9 @@
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
     "watch": "nodemon -e ts -w ./src -x npm run watch:serve",
-    "watch:serve": "node --inspect -r ts-node/register src/index.ts",
+    "watch:serve": "ts-node src/index.ts",
+    "inspect": "nodemon -e ts -w ./src -x npm run watch:inspect",
+    "watch:inspect": "node --inspect -r ts-node/register src/index.ts",
     "build": "tsc",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -34,5 +36,8 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "@turf/turf": "^5.1.6"
+  }
 }
