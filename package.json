@@ -1,0 +1,30 @@
+{
+  "name": "geojson-elevation-manipulation",
+  "version": "0.1.0",
+  "description": "A package to manipulate 3d geojson, set baseElevation, amplify elevation etc",
+  "main": "lib/index.js",
+  "types": "lib/index.t.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build",
+    "build": "tsc",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.4"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
