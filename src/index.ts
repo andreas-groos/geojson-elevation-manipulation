@@ -1,1 +1,6 @@
-export const Greeter = (name: string) => `Hello ${name}`;
+export const Greeter = (name: string) => {
+    console.log(name)
+    return `Hello ${name}`;
+}
+
+Greeter('Andreas')
